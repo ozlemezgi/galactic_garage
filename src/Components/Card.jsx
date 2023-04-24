@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Card() {
+function Card({vehicle}) {
+  console.log(vehicle);
   return (
     <>
       <div className="card">
