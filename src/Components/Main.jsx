@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { BsSearch } from "react-icons/bs";
 import Card from "./Card";
 import axios from "axios";
@@ -7,6 +7,18 @@ function Main() {
   // using state hooks to keep track of search value and search results
   const [search, setSearch] = useState("");
   const [vehicleData, setVehicleData] = useState([]);
+  const [nextPageUrl, setNextPageUrl] = useState("");
+
+  // useEffect hook to make a search from SWAPI when the page loads
+  useEffect(() => {
+    axios
+      .get(`https://swapi.dev/api/starships/`)
+      .then((res) => {
+        setVehicleData(res.data.results);
+        setNextPageUrl(res.data.next);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   // function that will be executed when the form is submitted
   const handleSubmit = (e) => {
@@ -14,7 +26,21 @@ function Main() {
     // using axios library to make a search from SWAPI and saving the results to the state hook
     axios
       .get(`https://swapi.dev/api/starships/?search=${search}`)
-      .then((res) => setVehicleData(res.data.results))
+      .then((res) => {
+        setVehicleData(res.data.results);
+        setNextPageUrl(res.data.next);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // function to load more data from SWAPI
+  const handleLoadMore = () => {
+    axios
+      .get(nextPageUrl)
+      .then((res) => {
+        setVehicleData([...vehicleData, ...res.data.results]);
+        setNextPageUrl(res.data.next);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -44,6 +70,12 @@ function Main() {
       <div className="container">
         {/* Displaying search results using the Card component */}
         {<Card vehicle={vehicleData} />}
+        {/* Load more button */}
+        {nextPageUrl && (
+          <button className="load-more" onClick={handleLoadMore}>
+            Load More
+          </button>
+        )}
       </div>
     </>
   );
