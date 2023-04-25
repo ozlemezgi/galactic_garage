@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from "react";
 import { BsSearch } from "react-icons/bs";
 import Card from "./Card";
 import axios from "axios";
+import { Outlet } from "react-router-dom";
 
 function Main() {
   // using state hooks to keep track of search value and search results
@@ -77,6 +78,7 @@ function Main() {
           </button>
         )}
       </div>
+      <Outlet/>
     </>
   );
 }
