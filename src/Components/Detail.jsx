@@ -21,27 +21,27 @@ function Detail({show,item,onClose}) {
               </h4>
               <br />
               <h4>
-                Hyperdrive Rating<span>{item.hyperdrive_rating}</span>
+                Hyperdrive Rating :<span>{item.hyperdrive_rating}</span>
               </h4>
               <br />
               <h4>
-                Passengers<span>{item.passengers}</span>
+                Passengers :<span>{item.passengers}</span>
               </h4>
               <br />
               <h4>
-                Max Atmosphering Speed<span>{item.max_atmosphering_speed}</span>
+                Max Atmosphering Speed :<span>{item.max_atmosphering_speed}</span>
               </h4>
               <br />
               <h4>
-                Manufacturer<span>{item.manufacturer}</span>
+                Manufacturer :<span>{item.manufacturer}</span>
               </h4>
               <br />
               <h4>
-                Crew<span>{item.crew}</span>
+                Crew :<span>{item.crew}</span>
               </h4>
               <br />
               <h4>
-                Cargo Capacity<span>{item.cargo_capacity}</span>
+                Cargo Capacity :<span>{item.cargo_capacity}</span>
               </h4>
               <br />
             </div>
