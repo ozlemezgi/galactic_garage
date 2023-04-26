@@ -1,5 +1,6 @@
 import React from 'react'
 import {AiOutlineClose} from "react-icons/ai"
+import {BiArrowBack} from "react-icons/bi"
 
 function Detail({show,item,onClose}) {
     if(!show){
@@ -10,14 +11,15 @@ function Detail({show,item,onClose}) {
       <div className="overlay">
         <div className="overlay-inner">
           <button className="close" onClick={onClose}>
-            <AiOutlineClose />
+            {/* <AiOutlineClose /> */}
+            <BiArrowBack /> 
           </button>
           <div className="inner-box">
             <h2>{item.name}</h2>
-            <img src="./images/starship.avif" alt="" />
+            <img src="/images/starship.avif" alt="" />
             <div className="info">
               <h4>
-                Model<span>{item.model}</span>
+                Model :<span>{item.model}</span>
               </h4>
               <br />
               <h4>

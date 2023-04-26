@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Detail from './Detail';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 
 function Card({vehicle}) {
@@ -11,6 +11,10 @@ function Card({vehicle}) {
   // Define state variables to handle showing/hiding the Detail component and storing the selected vehicle
   const [show, setShow] = useState(false);
   const [vehicleItem, setVehicleItem] = useState();
+
+  // Initialize useNavigate hook
+  const navigate = useNavigate();
+  
   return (
     <>
       {vehicle.map((item) => {
@@ -27,7 +31,7 @@ function Card({vehicle}) {
                   setVehicleItem(item);
                 }}
               >
-                <img src="./images/starship.avif" alt="" />
+                <img src="/images/starship.avif" alt="" />
 
                 <div className="bottom">
                   <h3 className="title">{item.name}</h3>
@@ -41,7 +45,10 @@ function Card({vehicle}) {
             <Detail
               show={show}
               item={vehicleItem}
-              onClose={() => setShow(false)}
+              onClose={() => {
+                setShow(false);
+                navigate("/");
+              }}
             />
           </>
         );
