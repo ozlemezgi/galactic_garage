@@ -71,6 +71,8 @@ function Main() {
       <div className="container">
         {/* Displaying search results using the Card component */}
         {<Card vehicle={vehicleData} />}
+      </div>
+      <div>
         {/* Load more button */}
         {nextPageUrl && (
           <button className="load-more" onClick={handleLoadMore}>
@@ -78,7 +80,7 @@ function Main() {
           </button>
         )}
       </div>
-      <Outlet/>
+      {/* <Outlet />  */}
     </>
   );
 }
