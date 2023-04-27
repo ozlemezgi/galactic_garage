@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import Detail from './Detail';
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import starshipsData from "../assets/images/Image.json";
 
 function Card({vehicle}) {
   console.log(vehicle);
@@ -18,6 +19,8 @@ function Card({vehicle}) {
   return (
     <>
       {vehicle.map((item) => {
+        // Find the corresponding image URL for the vehicle's name
+        const imgURL = starshipsData.find((ship) => ship.name === item.name)?.img;
         return (
           <>
             <Link
@@ -31,7 +34,8 @@ function Card({vehicle}) {
                   setVehicleItem(item);
                 }}
               >
-                <img src="/images/starship.avif" alt="" />
+                {/* <img src="/images/starship.avif" alt="" /> */}
+                <img src={imgURL} alt="" />
 
                 <div className="bottom">
                   <h3 className="title">{item.name}</h3>

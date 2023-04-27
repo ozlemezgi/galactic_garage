@@ -244,6 +244,7 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 2rem;
+  justify-content:center;
 }
 
 .inner-box h2 {
@@ -264,6 +265,7 @@ button:hover {
   height: auto;
   margin-right: 2rem;
   margin-bottom: 2rem;
+   justify-content: center;
 }
 
 .inner-box .info {
