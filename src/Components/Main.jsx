@@ -50,12 +50,12 @@ function Main() {
       <div className="header">
         <div className="header-container">
           <h1>Galactic Garage</h1>
-          <h2>Discover Space's Best Vehicles</h2>
+          <h2>Discover Space's Best Starships</h2>
           <form onSubmit={handleSubmit}>
             <div className="search">
               <input
                 type="text"
-                placeholder="Enter for a vehicle"
+                placeholder="Please enter the name of the starship"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -68,6 +68,12 @@ function Main() {
           </form>
         </div>
       </div>
+      {vehicleData.length === 0 && (
+        <div className="no-result">
+          Mission is to find the spaceship, but it seems like the Force is not
+          with us.<br/> Would you like to try a name from the Star Wars universe?
+        </div>
+      )}
       <div className="container">
         {/* Displaying search results using the Card component */}
         {<Card vehicle={vehicleData} />}
