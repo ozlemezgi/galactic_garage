@@ -70,7 +70,7 @@ function Main() {
       </div>
       {vehicleData.length === 0 && (
         <div className="no-result">
-          Mission is to find the spaceship, but it seems like the Force is not
+          Mission is to find the spaceship, but it seems like the force is not
           with us.<br/> Would you like to try a name from the Star Wars universe?
         </div>
       )}
