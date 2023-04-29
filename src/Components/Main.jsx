@@ -68,10 +68,11 @@ function Main() {
           </form>
         </div>
       </div>
-      {vehicleData.length === 0 && (
+      {vehicleData.length === 0 && search && (
         <div className="no-result">
           Mission is to find the spaceship, but it seems like the force is not
-          with us.<br/> Would you like to try a name from the Star Wars universe?
+          with us.
+          <br /> Would you like to try a name from the Star Wars universe?
         </div>
       )}
       <div className="container">

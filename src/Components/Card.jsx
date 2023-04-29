@@ -1,14 +1,10 @@
 import React, { useState} from 'react'
 import Detail from './Detail';
 import { Link, useNavigate } from "react-router-dom";
-import { useParams } from 'react-router-dom';
 import starshipsData from "../assets/images/Image.json";
 
 function Card({vehicle}) {
   console.log(vehicle);
-
-  // Get the name parameter from the URL
-  // const { name } = useParams();
 
   // Define state variables to handle showing/hiding the Detail component and storing the selected vehicle
   const [show, setShow] = useState(false);
