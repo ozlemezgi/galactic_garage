@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import starshipsData from "../assets/images/Image.json";
 
 function Card({vehicle}) {
-  console.log(vehicle);
+  // console.log(vehicle);
 
   // Define state variables to handle showing/hiding the Detail component and storing the selected vehicle
   const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ function Card({vehicle}) {
         // Find the corresponding image URL for the vehicle's name
         const imgURL = starshipsData.find((ship) => ship.name === item.name)?.img;
         return (
-          <>
+          <React.Fragment key={item.name}>
             <Link
               to={`detail/${item.name.replaceAll(" ", "-")}`}
               style={{ textDecoration: "none", color: "#222" }}
@@ -30,9 +30,7 @@ function Card({vehicle}) {
                   setVehicleItem(item);
                 }}
               >
-                {/* <img src="/images/starship.avif" alt="" /> */}
                 <img src={imgURL} alt="" />
-
                 <div className="bottom">
                   <h3 className="title">{item.name}</h3>
                   <p className="model">Model:{item.model}</p>
@@ -50,7 +48,7 @@ function Card({vehicle}) {
                 navigate("/");
               }}
             />
-          </>
+          </React.Fragment>
         );
       })}
     </>

@@ -2,10 +2,10 @@ import React, { useState ,useEffect} from "react";
 import { BsSearch } from "react-icons/bs";
 import Card from "./Card";
 import axios from "axios";
-import { Outlet } from "react-router-dom";
+
 
 function Main() {
-  // using state hooks to keep track of search value and search results
+  // using state hooks to keep track of values and results
   const [search, setSearch] = useState("");
   const [vehicleData, setVehicleData] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState("");
@@ -87,7 +87,6 @@ function Main() {
           </button>
         )}
       </div>
-      {/* <Outlet />  */}
     </>
   );
 }

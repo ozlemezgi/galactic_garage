@@ -1,9 +1,7 @@
-import logo from "./logo.svg";
 import Main from "./Components/Main";
-import Card from "./Components/Card";
 import Detail from "./Components/Detail";
 import "./Components/style.css";
-import { Route ,Routes ,Link} from "react-router-dom";
+import { Route ,Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +10,6 @@ function App() {
           <Route path="detail/:name" element={<Detail/>} />
           </Route>
       </Routes>
-  
   );
 }
 

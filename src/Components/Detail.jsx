@@ -1,5 +1,4 @@
 import React from 'react'
-import {AiOutlineClose} from "react-icons/ai"
 import {BiArrowBack} from "react-icons/bi"
 import starshipsData from "../assets/images/Image.json";
 
@@ -12,17 +11,14 @@ function Detail({show,item,onClose}) {
       <div className="overlay">
         <div className="overlay-inner">
           <button className="close" onClick={onClose}>
-            {/* <AiOutlineClose /> */}
             <BiArrowBack />
           </button>
           <div className="inner-box">
             <h2>{item.name}</h2>
-            {/* <img src="/images/starship.avif" alt="" /> */}
             <img
               src={starshipsData.find((ship) => ship.name === item.name)?.img}
               alt=""
             />
-
             <div className="info">
               <h4>
                 Model :<span>{item.model}</span>
